@@ -1,24 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HuG-25-kG9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="HCN-3p-4Zh">
+            <objects>
+                <navigationController id="HuG-25-kG9" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GzU-DW-gVZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NST-xs-UJL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bYg-UF-ZaE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-799" y="30"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AnimationTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZY-4a-yH6">
+                                <rect key="frame" x="134" y="155" width="106" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GM7-KX-4wm"/>
+                                </constraints>
+                                <state key="normal" title="BasicAnimation"/>
+                                <connections>
+                                    <segue destination="Cv1-1V-uLw" kind="push" identifier="BacSegue" id="VC2-In-g2e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXw-5P-paw">
+                                <rect key="frame" x="119" y="222" width="137" height="30"/>
+                                <state key="normal" title="KeyFrameAnimation"/>
+                                <connections>
+                                    <segue destination="OV0-LO-9it" kind="push" id="QYT-2a-uoi"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MZY-4a-yH6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="91" id="5Zx-6e-crL"/>
+                            <constraint firstItem="DXw-5P-paw" firstAttribute="height" secondItem="MZY-4a-yH6" secondAttribute="height" id="RAl-XE-j3a"/>
+                            <constraint firstItem="MZY-4a-yH6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sgm-IW-yLf"/>
+                            <constraint firstItem="DXw-5P-paw" firstAttribute="centerX" secondItem="MZY-4a-yH6" secondAttribute="centerX" id="z39-y3-SOh"/>
+                            <constraint firstItem="DXw-5P-paw" firstAttribute="top" secondItem="MZY-4a-yH6" secondAttribute="bottom" constant="37" id="zaI-gV-m2P"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="1zS-E3-K60"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-66" y="29"/>
+        </scene>
+        <!--Animations View Controller-->
+        <scene sceneID="FSQ-0f-wAX">
+            <objects>
+                <viewController id="OV0-LO-9it" customClass="AnimationsViewController" customModule="AnimationTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gue-c6-IAn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Jrh-7Q-qe4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lon-8p-8Lo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h02-zj-SOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-66" y="737"/>
+        </scene>
+        <!--Basic Animation Controller-->
+        <scene sceneID="QTC-Ig-o6w">
+            <objects>
+                <viewController storyboardIdentifier="BaiscAC" id="Cv1-1V-uLw" customClass="BasicAnimationController" customModule="AnimationTest" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sZc-hG-6j4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="VBp-Sp-3ta"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EZL-mn-6jn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6J-yh-FEV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="654" y="29"/>
         </scene>
     </scenes>
 </document>
